@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Comparison View</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+  <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.3/angular-material.css'>
+<link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.3/docs.css'>
+<link rel='stylesheet' href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.css'>
+<link rel='stylesheet' href="/view1/view1.css">
+<link rel='stylesheet' href="/view1/ng-table.scss">
+</head>
+
+<body>
+
+<div class="buttonController" ng-controller="buttonController">
+<span id="buttons">
+  <button ng-click="traitsView()"id="traitsBut">Traits</button>
+  <button ng-click="timeView()" id="timeBut">Time</button>
+  <button ng-click="compView()"id="compBut">Comparison</button>
+</span>
+<div>
+
+<div class="tableController" ng-controller = 'tableController'>
+<table ng-table="tableParams" class="table table-bordered table-striped" show-filter="true">
+    <tr ng-repeat="user in $data">
+        <td data-title="'I thought I liked...'" filter="{ old: 'text'}" sortable="'old'" ng-style={'border':"'black'"}>
+            {{user.old}}</td>
+        <td data-title="'I actually like...'" filter="{ new: 'text'}" sortable="'new'">
+            {{user.new}}</td>
+    </tr>
+</table>
+</div>
+
+
+<div ng-controller="profileController" class="md-padding dialogdemoBasicUsage" id="popupContainer" ng-cloak="" ng-app="MyApp">
+
+<div class="dialog-demo-content" layout="row" layout-wrap="" layout-margin="" layout-align="center">
+
+  <md-button id="prof-button"class="md-primary md-raised" ng-click="showAdvanced($event)">
+    My Profile
+  </md-button>
+
+    <script type="text/ng-template" id="dialog1.tmpl.html">
+      <md-dialog aria-label="My Profile">
+      <form ng-cloak>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>My Profile</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+
+              <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+          <div class="md-dialog-content">
+
+
+    				<img src="http://31.media.tumblr.com/e5c4cc9360979501fca15ac29ad73c1f/tumblr_n27aspHtxg1tuavwao1_500.gif">
+            <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Chris_Evans_filming_Captain_America_in_DC_cropped.jpg/170px-Chris_Evans_filming_Captain_America_in_DC_cropped.jpg">
+            <h2>Things I Like</h2>
+
+            <ul>
+            	<li>Chris Evans</li>
+              <li>dogs</li>
+              <li>coffee</li>
+              <li>chipotle</li>
+              <li>hot nerdy derpy guys. Ha!</li>
+            </ul>
+
+          </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+          <md-button href="../home/home.html" target="_blank" md-autofocus>
+            Edit
+          </md-button>
+          <span flex></span>
+          <md-button ng-click="answer('not useful')">
+           Close
+          </md-button>
+        </md-dialog-actions>
+      </form>
+    </md-dialog>
+    </script>
+
+    <div class="log-button">
+  <form action="/#!/initScreen">
+  <button class="button">Logout</button>
+</form>
+</div>
+
+  </div>
+</body>
+</html>
