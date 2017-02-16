@@ -5,17 +5,20 @@
     <title>AngularJS lmao</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
     <link href="style.css" rel="stylesheet" />
+    <link href="index_login.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" data-require="angular.js@1.0.x" data-semver="1.0.8"></script>
     <script src="app.js"></script>
   </head>
   <body ng-controller="index_loginCtrl">
-  <h3>Login</h3>
-  <!-- Form to get username & Password -->
-   <form action="/#!/view1">
-      <label>Username:</label><input type="text" ng-model="username" /></br></br>
-      <label></label>Password:</label><input type="password" ng-model="password"></br>
-      <button  type="submit" ng-click="submit()">login</button>
-  </form>
-
-</body>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" action="/#!/view1">
+                <input type="text" ng-model="username" placeholder="username"/>
+                <input type="password" ng-model="password" placeholder="password"/>
+                <button type="submit" ng-click="submit()">login</button>
+                <p class="message">Not registered? <a href="../makeAcct/create.html">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+  </body>
 </html>

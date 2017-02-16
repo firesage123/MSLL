@@ -12,28 +12,69 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.css'>
 <link rel='stylesheet' href="/view1/view1.css">
 <link rel='stylesheet' href="/view1/ng-table.scss">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 </head>
 
 <body>
 
+  <div class="w3-container">
+    <h2>MSLL</h2>
+
+    <div class="w3-row">
+      <a href="javascript:void(0)" onclick="openCity(event, 'Time');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Time</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'Traits');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Traits</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'Comparison');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Comparison</div>
+      </a>
+    </div>
+
+    <div id="Time" class="w3-container city" style="display:none">
+      <h2>Time Goes Here.</h2>
+      <p>Ideally, you should be able to view the time it took for you to swipe right.</p>
+    </div>
+
+    <div id="Traits" class="w3-container city" style="display:none">
+      <img class="graphs" src="http://i.imgur.com/BXVmR7n.png" width="475" height="600"></img>
+    </div>
+
+    <div id="Comparison" class="w3-container city" style="display:none">
+      <div class="tableController" ng-controller = "tableController">
+      <table ng-table="tableParams" class="table table-bordered table-striped" show-filter="true">
+          <tr class="row" ng-repeat="user in $data">
+            <!--
+              <td data-title="'I thought I liked...'" filter="{ old: 'text'}" sortable="'old'" ng-style={'border':"'black'"}>
+                  {{user.old}}</td>
+              <td data-title="'I actually like...'" filter="{ new: 'text'}" sortable="'new'">
+                  {{user.new}}</td>
+                -->
+
+              <td class="theLikes" data-title="'I thought I liked...'" ng-style={'border':"'black'"}>
+                      {{user.old}}</td>
+
+
+
+              <td class="theActualLikes" data-title="'I actually like...'" >
+                      {{user.new}}</td>
+          </tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+
+<!--
 <div class="buttonController" ng-controller="buttonController">
 <span id="buttons">
-  <button ng-click="traitsView()"id="traitsBut">Traits</button>
-  <button ng-click="timeView()" id="timeBut">Time</button>
-  <button ng-click="compView()"id="compBut">Comparison</button>
+  <button ng-click ="traitsView()"id="traitsBut" class="bn">Traits</button>
+  <button ng-click ="timeView()" id="timeBut" class="bn" >Time</button>
+  <button ng-click ="compView()"id="compBut" class="bn">Comparison</button>
 </span>
-<div>
-
-<div class="tableController" ng-controller = 'tableController'>
-<table ng-table="tableParams" class="table table-bordered table-striped" show-filter="true">
-    <tr ng-repeat="user in $data">
-        <td data-title="'I thought I liked...'" filter="{ old: 'text'}" sortable="'old'" ng-style={'border':"'black'"}>
-            {{user.old}}</td>
-        <td data-title="'I actually like...'" filter="{ new: 'text'}" sortable="'new'">
-            {{user.new}}</td>
-    </tr>
-</table>
-</div>
+<div> -->
 
 
 <div ng-controller="profileController" class="md-padding dialogdemoBasicUsage" id="popupContainer" ng-cloak="" ng-app="MyApp">
@@ -61,9 +102,11 @@
         <md-dialog-content>
           <div class="md-dialog-content">
 
+            Your profile pictures and descriptions should be located here after you link your account with Tinder.
+            <br> </br>
 
     				<img src="http://31.media.tumblr.com/e5c4cc9360979501fca15ac29ad73c1f/tumblr_n27aspHtxg1tuavwao1_500.gif">
-            <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Chris_Evans_filming_Captain_America_in_DC_cropped.jpg/170px-Chris_Evans_filming_Captain_America_in_DC_cropped.jpg">
+
             <h2>Things I Like</h2>
 
             <ul>
@@ -97,5 +140,7 @@
 </div>
 
   </div>
+</div>
+
 </body>
 </html>

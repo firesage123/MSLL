@@ -1,5 +1,5 @@
 body {
-  background-color: #c2ecfc;
+  background-color: #76b852;
 }
 
 .tableController{
@@ -12,36 +12,37 @@ body {
   margin-top: 5%;
 }
 
-.buttonController #buttons #traitsBut {
-  position:relative;
-  left: 20%;
-  margin-top: 3%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-left: 35px;
-  padding-right: 35px;
-  font-family: Raleway, sans-serif;
+.row {
+
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    vertical-align: top;
+    padding: 4px;
+    padding-right: 18%;
+    padding-left: 4%;
+    text-align: left;
 }
 
-.buttonController #buttons #timeBut {
-  text-align: center;
-  position:relative;
-  left: 20%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-left: 35px;
-  padding-right: 35px;
-  font-family: Raleway, sans-serif;
+td {
+  padding-left: 18px;
+  padding-right: 38px;
+  padding-top: 10px;
+  margin-right: 35px;;
+  text-align: left;
+
 }
 
-.buttonController #buttons #compBut {
-  position:relative;
-  left: 20%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-family: Raleway, sans-serif;
+html {
+      background-color: #76b852;
+}
+
+.row data-title {
+  text-align: left;
+}
+
+#Traits .graphs {
+  position: relative;
+  left: 28%;
 }
 
 .button {
@@ -59,4 +60,29 @@ body {
 .log-button {
     position: absolute;
     left: 80%;
+}
+
+.button:hover,.button:active,.button:focus {
+  background: #43A047;
+}
+
+.bn
+{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  /*margin-bottom: 10px;*/
+}
+#compBut {
+  background: #43A047;
+}
+
+.bn:hover,.bn:active,.bn:focus {
+  background: #43A047;
 }
