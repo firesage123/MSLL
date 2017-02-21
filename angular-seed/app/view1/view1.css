@@ -45,6 +45,23 @@ html {
   left: 28%;
 }
 
+#Traits #wk {
+  position: absolute;
+  top: 115%;
+}
+
+#Traits #mth {
+  position: absolute;
+  top: 115%;
+  margin-left: 7%;
+}
+
+#Traits #yr {
+  position: absolute;
+  top: 115%;
+    margin-left: 15%;
+}
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -85,4 +102,12 @@ html {
 
 .bn:hover,.bn:active,.bn:focus {
   background: #43A047;
+}
+
+.one {
+    width: 50%;
+    float: left;
+}
+.two {
+    margin-left: 15%;
 }
